@@ -1,7 +1,8 @@
-console.log("Hola hola?");
 
-function suma(a,b) {
-    return a + b;
+
+function dic() {
+    document.getElementById('prueba').innerHTML='Estas regitrado'
+    alert("resgistrado")
+  
 }
 
-console.log(suma(8,2));
