@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Crea usando la funcion addEventListners una pagina web que un campo de texto grabe lo escrito en la pagina web cada vez que vamos escribeindo -->
+ <!-- Funcionaaaa -->
+    <h1>Grabar Texto</h1>
+    <textarea id="miCampoTexto" placeholder="Escribe algo..."></textarea>
+
+    <script>
+        function inputChangeHandler(event) {
+            var textoActual = event.target.value;
+            console.log('Texto actual:', textoActual);
+        }
+
+        // Obtiene el elemento del campo de texto
+        var campoTextoElement = document.getElementById('miCampoTexto');
+
+        // Agrega un evento 'input' al campo de texto
+        campoTextoElement.addEventListener('input', inputChangeHandler);
+    </script>
+
+</body>
+</html>
