@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrastra la Foto</title>
+    <style>
+        #foto {
+            width: 200px;
+            height: 200px;
+           
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Arrastra la Foto</h1>
+    <img id="foto" src="/JavaScript/fotos/foto1.jpg" alt="Foto">
+
+    <script>
+        function Arrastrafoto(event) {
+            console.log('Has arrastrado la foto');
+        }
+
+        // Obtiene el elemento de la foto
+        var fotoElement = document.getElementById('foto');
+
+
+        fotoElement.addEventListener('dragstart', Arrastrafoto);
+    </script>
+
+</body>
+</html>

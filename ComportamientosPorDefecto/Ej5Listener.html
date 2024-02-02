@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //Crea usando la funcion de addEventListener una pagina web que detecte cuando el usuario presiona una tecla en el teclado -->
+    <h2>Presiona una tecla</h2>
+
+    <script>
+        
+        function presionaTecla(event) {
+            console.log('Tecla presionada:', event.key);
+        }
+
+        // Agrega un evento 'keydown' al documento
+        document.addEventListener('keydown', presionaTecla);
+    </script>
+
+</body>
+</html>
