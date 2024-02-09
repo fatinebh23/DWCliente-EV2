@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Crea un codigo que establece unvalor en el almacenamiento local del n
+        avegador con la clave usuario y el valor dimas, y luego muestra un alerta con 
+        el valor lmacenado en la clave usuario -->
+
+        <script>
+            // Establece el valor en el almacenamiento local
+            localStorage.setItem('usuario', 'Dimas');
+        
+            // Obtiene el valor del almacenamiento local
+            var valorAlmacenado = localStorage.getItem('usuario');
+        
+            // Muestra una alerta con el valor almacenado
+            alert('Valor almacenado en la clave "usuario": ' + valorAlmacenado);
+        </script>
+        
+</body>
+</html>

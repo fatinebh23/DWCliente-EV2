@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- realiza la funcion con SetInterval y clearinterval  y que te muestre la hora por consola y te lo repita a los 5 segs y apare a los 20 segundos -->
+      <script>
+        let intervalID;
+    
+        function mostrarHora() {
+            const fecha = new Date();
+            const hora = fecha.getHours();
+            const minutos = fecha.getMinutes();
+            const segundos = fecha.getSeconds();
+    
+            console.log(`Hora actual: ${hora}:${minutos}:${segundos}`);
+        }
+    
+        // Iniciar la repetición cada 5 segundos
+        intervalID = setInterval(mostrarHora, 5000);
+    
+        // Detener la repetición después de 20 segundos
+        setTimeout(() => {
+            clearInterval(intervalID);
+            console.log("Repetición detenida después de 20 segundos");
+        }, 20000);
+    </script>
+
+</body>
+</html>

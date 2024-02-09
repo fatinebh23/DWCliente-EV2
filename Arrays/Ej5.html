@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 6. Recorrido de un array
+Crea un script que tome una serie de palabras ingresadas por el usuario y almacene esas palabras en un
+array. Posteriormente,manipule ese array para mostrar en una nueva ventana los siguientes datos: -->
+
+<!-- 
+//fomulario  -->
+<form id="palabrasForm">
+    <label for="palabrasInput">Ingresa palabras separadas por espacio:</label>
+    <input type="text" id="palabrasInput" name="palabras" required>
+    <button type="button" onclick="procesarPalabras()">Procesar Palabras</button>
+</form>
+
+<div id="resultado"></div>
+
+<script>
+
+    function procesarPalabras() {
+
+        // Obtener el valor del input y almacenar las palabras en un array
+        const inputElement = document.getElementById("palabrasInput");
+        const palabras = inputElement.value.split(' ');
+
+        // Construir un string con las palabras para mostrar en la web
+        let resultadoHtml = "<p>Palabras ingresadas:</p><ul>";
+        palabras.forEach((palabra, index) => {
+            resultadoHtml += `<li>Palabra ${index + 1}: ${palabra}</li>`;
+        });
+
+        // las palabras ordenadas alfabéticamente
+        const palabrasOrdenadas = palabras.slice().sort();
+
+        resultadoHtml += "<p>Palabras ordenadas alfabéticamente:</p><ul>";
+        palabrasOrdenadas.forEach((palabra, index) => {
+            resultadoHtml += `<li>${palabra}</li>`;
+        });
+
+        
+        resultadoHtml += "</br>";
+        
+
+        // Abrir una nueva ventana y mostrar las palabras
+        const nuevaVentana = window.open('', 'Palabras', 'width=400,height=300');
+        nuevaVentana.document.body.innerHTML = resultadoHtml;
+
+    }
+</script>
+    
+   
+</body>
+</html>

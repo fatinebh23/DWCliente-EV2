@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Utilizando funciones
+    var stringSearch="Hola mundo"
+    quet ted vuelva ola
+     -->
+     <script>
+        // Definir la cadena
+        var stringSearch = "Hola mundo";
+    
+        // Definir la función para obtener la subcadena
+        function obtenerSubcadena(cadena) {
+            // Utilizar el método substring para obtener la subcadena
+            var subcadena = cadena.substring(1, 4); // Los índices 1 y 4 representan los límites para obtener "ola"
+            return subcadena;
+        }
+    
+        // Llamar a la función y mostrar el resultado
+        var resultado = obtenerSubcadena(stringSearch);
+        document.write('<p>Resultado: ' + resultado + '</p>');
+    </script>
+    
+
+</body>
+</html>

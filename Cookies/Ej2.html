@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Crea un array [13,-5,-9,1,8,2] y devuleve solo los positivos.Muestralos con un document  -->
+    <script>
+        // Crea el array
+        var numeros = [13, -5, -9, 1, 8, 2];
+    
+        // Filtra los números positivos utilizando la función filter
+        var positivos = numeros.filter(function(numero) {
+            return numero > 0;
+        });
+    
+        // Muestra los números positivos en el documento
+        document.write('<p>Números positivos: ' + positivos.join(', ') + '</p>');
+    </script>
+  
+</body>
+</html>

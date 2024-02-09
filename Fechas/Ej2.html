@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- realiza la funcion con SetTimeOut y que te muestre la hora por consola y te lo repita a los 5 seg -->
+
+    <script>
+        function mostrarHora() {
+            const fecha = new Date();
+            const hora = fecha.getHours();
+            const minutos = fecha.getMinutes();
+            const segundos = fecha.getSeconds();
+    
+            console.log(`Hora actual: ${hora}:${minutos}:${segundos}`);
+            
+            // Establecer la repetición cada 5 segundos
+            setTimeout(mostrarHora, 5000);
+        }
+    
+        // Iniciar la función para mostrar la hora
+        mostrarHora();
+    </script>
+</body>
+</html>

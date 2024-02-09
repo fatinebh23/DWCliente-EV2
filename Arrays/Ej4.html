@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Realiza un script que muestre en una pagina web un rombo solo con el perimetro (con asteriscos) -->
+
+    <script>
+
+
+        function dibujarPerimetroRombo(filas) {
+            if (filas % 2 === 0) {
+                console.error("El número de filas debe ser impar para dibujar un rombo");
+                return;
+            }
+    
+            let romboPerimetro = '';
+            const mitad = Math.floor(filas / 2);
+    
+            for (let i = 0; i < filas; i++) {
+                const espacios = Math.abs(mitad - i);
+                const asteriscos = filas - 2 * espacios;
+    
+                if (i === 0 || i === filas - 1) {
+                
+                    romboPerimetro += '*'.repeat(filas);
+                } else {
+               
+                    romboPerimetro += '*';
+                }
+    
+                romboPerimetro += '\n';
+            }
+    
+    
+            // Mostrar el perímetro del rombo en la página web
+            document.write('<pre>' + romboPerimetro + '</pre>');
+        }
+    
+        // Llamar a la función para dibujar el perímetro del rombo con 5 filas (puedes cambiar este valor)
+        dibujarPerimetroRombo(7);
+    </script>
+    
+
+    
+</body>
+</html>
