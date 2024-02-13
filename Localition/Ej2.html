@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Que calcule el area de un circulo,ademas hay que generar un boton que al tocaro refresque la pagina -->
+    <h1>Calculadora de Área de Círculo</h1>
+
+<label for="radio">Radio del círculo:</label>
+<input type="number" id="radio">
+<button onclick="calcularYRefrescar()">Calcular Área y Refrescar</button>
+
+<p>Área del círculo: <span id="areaResultado"></span></p>
+
+<script>
+    
+    // Función para calcular el área de un círculo
+    function calcularAreaCirculo() {
+        var radio = document.getElementById("radio").value;
+        var area = Math.PI * Math.pow(radio, 2);
+        return area.toFixed(2); // Redondear a 2 decimales
+    }
+
+    // Función para calcular el área y refrescar la página
+    function calcularYRefrescar() {
+        // Calcular el área del círculo
+        var area = calcularAreaCirculo();
+
+        // Mostrar el resultado en la página
+        var areaResultadoElement = document.getElementById("areaResultado");
+        areaResultadoElement.textContent = area + " unidades cuadradas";
+
+        // Refrescar la página
+        location.reload();
+    }
+</script>
+</body>
+</html>

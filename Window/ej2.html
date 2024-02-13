@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Genera un boton que al pulsarlo abra una ventana de ancho 300 y alto 200 y escribe en esa pgina web se usan las propiedades. El nombre de la ventana es Test -->
+<!-- pendiente -->
+    <button onclick="abrirVentana()">Abrir Ventana</button>
+   
+<script>
+     var ventanaEmergente;
+    function abrirVentana() {
+        // Propiedades de la ventana
+        var anchoVentana = 300;
+        var altoVentana = 200;
+
+        // Abrir la ventana con las propiedades especificadas
+        window.open("", "Test", "width=" + anchoVentana + ", height=" + altoVentana);
+
+        // Escribir en la ventana abierta
+        var contenidoVentana = "<h1>Bienvenido a la ventana Test</h1><p>¡Este es un mensaje desde la página principal!</p>";
+        var ventanaTest = window.open("", "Test");
+        ventanaTest.document.write(contenidoVentana);
+        
+    }
+    function cerrarVentana() {
+            // Cierra la ventana emergente si está abierta
+            if (ventanaEmergente) {
+                ventanaEmergente.close();
+            }
+        }
+</script>
+
+</body>
+</html>

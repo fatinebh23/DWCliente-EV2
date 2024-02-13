@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Mostrar por pantalla un documento que nos muestre, para cargar la pagina el objeto location y incluido un boton para ha hcaer click para wikipedia-->
+
+    <h1>Información del Objeto Location</h1>
+
+    <p>URL actual: <span id="currentUrl"></span></p>
+    
+    <button onclick="redirectToWikipedia()">Ir a Wikipedia</button>
+
+    <p>Altura de la pantalla: <span id="screenHeight"></span> px</p>
+    <p>Anchura de la pantalla: <span id="screenWidth"></span> px</p>
+    
+    <script>
+        
+        // Función para mostrar la altura y la anchura de la pantalla
+        function displayScreenSize() {
+            var screenHeightElement = document.getElementById("screenHeight");
+            var screenWidthElement = document.getElementById("screenWidth");
+    
+            screenHeightElement.textContent = window.innerHeight;
+            screenWidthElement.textContent = window.innerWidth;
+        }
+    
+        // Mostrar la altura y la anchura de la pantalla al cargar la página
+        window.onload = function() {
+            displayScreenSize();
+        };
+    
+        // Actualizar la altura y la anchura de la pantalla al cambiar el tamaño de la ventana
+        window.onresize = function() {
+            displayScreenSize();
+        };
+           // Función para obtener y mostrar la URL actual
+    function displayCurrentUrl() {
+        var currentUrlElement = document.getElementById("currentUrl");
+        currentUrlElement.textContent = window.location.href;
+    }
+
+    // Función para redirigir a la página de Wikipedia
+    function redirectToWikipedia() {
+        window.location.href = "https://es.wikipedia.org/wiki/Portada";
+    }
+
+    // Mostrar la URL actual al cargar la página
+    window.onload = function() {
+        displayCurrentUrl();
+    };
+        
+    </script>
+</body>
+</html>
+
+
+<script>
+ 
+</script>

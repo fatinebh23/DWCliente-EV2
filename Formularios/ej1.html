@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Realiza un programa que al dar click checkbox, te diga si la respuesta es correcta  -->
+    <!-- Funcionaaaa -->
+
+    <h2>Pregunta: ¿2 + 2 = 4?</h2>
+
+    <input type="checkbox" id="respuestaCheckbox"> <label for="respuestaCheckbox"> correcto</label>
+    <input type="checkbox" id="respuestaCheckbox"> <label for="respuestaCheckbox">incorrecto</label>
+  
+    <button onclick="verificarRespuesta()">Verificar</button>
+  
+    <script>
+      function verificarRespuesta() {
+        // Obtener el estado del checkbox
+        var checkbox = document.getElementById('respuestaCheckbox');
+        var esCorrecto = checkbox.checked;
+        var checkbox2 = document.getElementById('respuestaCheckbox');
+        var esIncoorrecto = checkbox.checked;
+  
+        // Verificar si la respuesta es correcta
+        if (esCorrecto) {
+          alert('¡Respuesta Correcta!');
+        } else {
+          alert('Respuesta Incorrecta. Intenta de nuevo.');
+        }
+      }
+
+
+    </script>
+  
+
+    
+</body>
+</html>
