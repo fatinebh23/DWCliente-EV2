@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Desarolla una pagina interactiva que actue como calculadora de formulas matematicas, permitiendo a usuario ingreasar una exposcion matematica en un campo 
+    de texto, evaluarla al hacer click en un boton y mostrar el resultado en otrocampo de texto -->
+
+    <!-- funcionaa -->
+
+    <body>
+        <h1>Calculadora Matemática</h1>
+    
+        <label for="formulaInput">Ingresa la fórmula:</label>
+        <input type="text" id="formulaInput" placeholder="Ejemplo: 2 * (3 + 5)" />
+    
+        <button onclick="evaluarFormula()">Calcular</button>
+    
+        <label for="resultadoOutput">Resultado:</label>
+        <input type="text" id="resultadoOutput" readonly />
+    
+        <script>
+            function evaluarFormula() {
+                const formulaInput = document.getElementById('formulaInput').value;
+                try {
+                    const resultado = eval(formulaInput);
+                    document.getElementById('resultadoOutput').value = resultado;
+                } catch (error) {
+                    document.getElementById('resultadoOutput').value = 'Error en la fórmula';
+                }
+            }
+        </script>
+</body>
+</html>
