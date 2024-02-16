@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ejemplo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input, label {
+            margin: 5px;
+        }
+    </style>
+</head>
+<!-- Realiza un formulario sencillo en el que el campo nombre no pueda estar vacio, el checkbox deba
+estar clicado y la fecha y teléfono tienen que ser un valor númerico(todos estos campos te los mostrará con
+un alert cuando no se cumplan). Una vez pulsado enviar te debe pedir aceptación. Especifica la URL a la que
+se enviarán los datos del formulario cuando se envíe(procesar.php), se utilizará el método POST, lo que
+significa que los datos del formulario se enviarán en el cuerpo de la solicitud HTTP. -->
+<!-- funcionaa -->
+<body>
+    <h1>Formulario de Ejemplo</h1>
+
+    <form id="miFormulario" action="procesar.php" method="POST" onsubmit="return validarFormulario()">
+        <label for="nombreInput">Nombre:</label>
+        <input type="text" id="nombreInput" name="nombre" required />
+
+        <label for="checkboxInput">Acepto los términos y condiciones:</label>
+        <input type="checkbox" id="checkboxInput" name="aceptoTerminos" required />
+
+        <label for="fechaInput">Fecha (numérico):</label>
+        <input type="number" id="fechaInput" name="fecha" required />
+
+        <label for="telefonoInput">Teléfono (numérico):</label>
+        <input type="number" id="telefonoInput" name="telefono" required />
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            const nombre = document.getElementById('nombreInput').value;
+            const checkbox = document.getElementById('checkboxInput').checked;
+            const fecha = document.getElementById('fechaInput').value;
+            const telefono = document.getElementById('telefonoInput').value;
+
+            if (nombre === '') {
+                alert('El campo Nombre no puede estar vacío.');
+                return false;
+            }
+
+            if (!checkbox) {
+                alert('Debes aceptar los términos y condiciones.');
+                return false;
+            }
+
+            if (isNaN(fecha) || isNaN(telefono)) {
+                alert('La Fecha y el Teléfono deben ser valores numéricos.');
+                return false;
+            }
+
+            const confirmacion = confirm('¿Estás seguro de enviar el formulario?');
+
+            return confirmacion;
+        }
+    </script>
+</body>
+</html>
+

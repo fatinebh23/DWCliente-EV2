@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Validación de NIF/NIE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        input, label {
+            margin: 5px;
+        }
+    </style>
+</head>
+<!-- Crea un formulario con tres campos,para nombre, apellidos y NIF/NIE y sus correspondientes
+etiquetas. Los tres campos deben ser obligatorios. Debes usar una lógica antes del envío, si el NIF o NIE es
+correcto. Si es número no es correcto, se mostrará un mensaje mediante un alert, si es correcto se enviará,
+los campos de nombre deben ser obligatorios. -->
+<!-- funcionaaa -->
+<body>
+    <h1>Formulario con Validación de NIF/NIE</h1>
+
+    <form id="miFormulario" action="#" method="POST" onsubmit="return validarFormulario()">
+        <label for="nombreInput">Nombre:</label>
+        <input type="text" id="nombreInput" name="nombre" required />
+
+        <label for="apellidosInput">Apellidos:</label>
+        <input type="text" id="apellidosInput" name="apellidos" required />
+
+        <label for="nifInput">NIF/NIE:</label>
+        <input type="text" id="nifInput" name="nif" required />
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            const nombre = document.getElementById('nombreInput').value;
+            const apellidos = document.getElementById('apellidosInput').value;
+            const nif = document.getElementById('nifInput').value;
+
+            if (nombre === '' || apellidos === '' || nif === '') {
+                alert('Todos los campos son obligatorios.');
+                return false;
+            }
+
+            // Validación del NIF/NIE
+            if (!validarNifNie(nif)) {
+                alert('El NIF/NIE no es válido.');
+                return false;
+            }
+
+            // Si llega aquí, el formulario se enviará
+            return true;
+        }
+
+        function validarNifNie(nif) {
+            // Expresión regular para validar NIF/NIE
+            const regexNifNie = /^[XYZ0-9][0-9]{7}[TRWAGMYFPDXBNJZSQVHLCKE]$/i;
+
+            // Comprobación de la validación
+            return regexNifNie.test(nif);
+        }
+    </script>
+</body>
+</html>
