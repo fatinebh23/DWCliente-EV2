@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario </title>
+    <style>
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            margin-bottom: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario</h2>
+    <form id="registroForm" action="#" method="post" onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" placeholder="Ej. 123456789" required>
+        <small id="telefonoError" class="error"></small>
+
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" required>
+        <small id="dniError" class="error">Este campo es obligatorio.</small>
+
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
+        <small id="edadError" class="error"></small>
+
+        <label for="sexo">Sexo:</label>
+        <input type="radio" id="masculino" name="sexo" value="masculino" required>
+        <label for="masculino">Masculino</label>
+        
+        <input type="radio" id="femenino" name="sexo" value="femenino" required>
+        <label for="femenino">Femenino</label>
+
+        <label for="foto">Incluir mi foto:</label>
+        <input type="file" id="foto" name="foto">
+
+        <label>
+            <input type="checkbox" id="enviarPublicidad" name="enviarPublicidad">
+            Enviar Publicidad
+        </label>
+
+        <label for="aficiones">Elegir tu aficion favorita:</label>
+        <select id="aficiones" name="aficiones" onchange="mostrarInfoAficion()">
+            <option value="musica">Música</option>
+            <option value="lectura">Lectura</option>
+            <option value="deporte">Deporte</option>
+        </select>
+
+        <label for="observaciones">Observaciones (máximo 15 caracteres):</label>
+        <textarea id="observaciones" name="observaciones" maxlength="15"></textarea>
+        <br>
+       <br>
+
+        <div id="infoAficion" style="display: none;"></div>
+
+        <input type="submit" value="Guardar Cambios">
+        <input type="button" value="Borrar datos introducidos" onclick="resetearFormulario()">
+    </form>
+
+    <script>
+        function validarFormulario() {
+            // ... (código de validación anterior)
+
+            // Validar Foto (opcional)
+            var foto = document.getElementById('foto').value;
+            if (foto.trim() !== '') {
+                // Aquí puedes realizar validaciones adicionales para el formato de la imagen si es necesario.
+            }
+
+            // El formulario se enviará si pasa todas las validaciones
+            return true;
+        }
+
+        function mostrarInfoAficion() {
+            var select = document.getElementById('aficiones');
+            var selectedIndex = select.selectedIndex;
+            var selectedValue = select.options[selectedIndex].value;
+            var infoAficion = document.getElementById('infoAficion');
+            infoAficion.innerHTML = 'La longitud de la lista es ' + select.length +
+                                    '<br>El índice seleccionado es el ' + selectedIndex +
+                                    '<br>El valor del índice seleccionado es ' + selectedValue;
+            infoAficion.style.display = 'block';
+        }
+
+        function resetearFormulario() {
+            document.getElementById('registroForm').reset();
+            document.getElementById('infoAficion').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
