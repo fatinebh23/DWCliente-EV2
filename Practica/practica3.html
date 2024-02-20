@@ -16,6 +16,11 @@
             color: red;
             font-size: 80%;
         }
+        .clase-sexo{
+
+            display: flex;
+            flex-direction: row;
+        }
     </style>
 </head>
 <body>
@@ -40,12 +45,13 @@
         <small id="edadError" class="error"></small>
 
         <label for="sexo">Sexo:</label>
+        <div class="clase-sexo">
         <input type="radio" id="masculino" name="sexo" value="masculino" required>
         <label for="masculino">Masculino</label>
-        
+    
         <input type="radio" id="femenino" name="sexo" value="femenino" required>
         <label for="femenino">Femenino</label>
-
+    </div>
         <label for="foto">Incluir mi foto:</label>
         <input type="file" id="foto" name="foto">
 
@@ -91,10 +97,11 @@
             var selectedIndex = select.selectedIndex;
             var selectedValue = select.options[selectedIndex].value;
             var infoAficion = document.getElementById('infoAficion');
-            infoAficion.innerHTML = 'La longitud de la lista es ' + select.length +
-                                    '<br>El índice seleccionado es el ' + selectedIndex +
-                                    '<br>El valor del índice seleccionado es ' + selectedValue;
+            
             infoAficion.style.display = 'block';
+            alert('La longitud de la lista es ' + select.length +
+                                    '\nEl índice seleccionado es el ' + selectedIndex +
+                                    '\nEl valor del índice seleccionado es ' + selectedValue);
         }
 
         function resetearFormulario() {
