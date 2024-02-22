@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Basándote en el código expuesto crea tu propio cronómetro. -->
+    <h1 id="cronometro">00:00:00</h1>
+    <button onclick="iniciarCronometro()">Iniciar</button>
+    <button onclick="detenerCronometro()">Detener</button>
+    <button onclick="reiniciarCronometro()">Reiniciar</button>
+    
+    <script>
+      let segundos = 0;
+      let minutos = 0;
+      let horas = 0;
+      let intervalId;
+    
+      function actualizarCronometro() {
+        segundos++;
+        if (segundos === 60) {
+          segundos = 0;
+          minutos++;
+          if (minutos === 60) {
+            minutos = 0;
+            horas++;
+          }
+        }
+    
+        const formatoTiempo = 
+          (horas < 10 ? "0" + horas : horas) + ":" +
+          (minutos < 10 ? "0" + minutos : minutos) + ":" +
+          (segundos < 10 ? "0" + segundos : segundos);
+    
+        document.getElementById("cronometro").innerText = formatoTiempo;
+      }
+    
+      function iniciarCronometro() {
+        intervalId = setInterval(actualizarCronometro, 1000);
+      }
+    
+      function detenerCronometro() {
+        clearInterval(intervalId);
+      }
+    
+      function reiniciarCronometro() {
+        detenerCronometro();
+        segundos = 0;
+        minutos = 0;
+        horas = 0;
+        document.getElementById("cronometro").innerText = "00:00:00";
+      }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- . Crea una cuenta atrás. -->
+
+    <h1 id="cuentaAtras">00:00:00</h1>
+<button onclick="iniciarCuentaAtras(60)">Iniciar cuenta atrás</button>
+
+<script>
+  let segundos;
+
+  function actualizarCuentaAtras() {
+    if (segundos > 0) {
+      segundos--;
+
+      const formatoTiempo = 
+        Math.floor(segundos / 3600).toString().padStart(2, '0') + ":" +
+        Math.floor((segundos % 3600) / 60).toString().padStart(2, '0') + ":" +
+        (segundos % 60).toString().padStart(2, '0');
+
+      document.getElementById("cuentaAtras").innerText = formatoTiempo;
+    } else {
+      detenerCuentaAtras();
+      alert("¡Tiempo agotado!");
+    }
+  }
+
+  function iniciarCuentaAtras(tiempoInicial) {
+    segundos = tiempoInicial;
+    actualizarCuentaAtras();
+    setInterval(actualizarCuentaAtras, 1000);
+  }
+
+  function detenerCuentaAtras() {
+    clearInterval(intervalId);
+  }
+</script>
+</body>
+</html>

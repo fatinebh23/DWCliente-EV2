@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- . Crea una página web con un botón para encender una alarma 60s y otro para pararla. -->
+    <button onclick="encenderAlarma()">Encender Alarma</button>
+    <button onclick="detenerAlarma()">Detener Alarma</button>
+    
+    <script>
+      let alarma;
+    
+      function encenderAlarma() {
+        // Establecer un temporizador de 60 segundos
+        alarma = setTimeout(function() {
+          alert("¡Alarma! Han pasado 60 segundos.");
+        }, 60000); // 60,000 milisegundos = 60 segundos
+      }
+    
+      function detenerAlarma() {
+        // Detener la alarma si está activa
+        if (alarma) {
+          clearTimeout(alarma);
+          alert("Alarma detenida.");
+        }
+      }
+    </script>
+</body>
+</html>
