@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 6.Implementa el código para que muestre la hora en formato 24h, formato
+09:05:03 en la página web y que cuente el tiempo cada segundo(2p). -->
+<h4>La hora en formato 24h</h4>
+    <p id="hora"></p>
+    <script>
+        function hora() {
+            var fecha = new Date();
+            var horas = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var segundos = fecha.getSeconds();
+            if (horas < 10) {
+                horas = '0' + horas;
+            }
+            if (minutos < 10) {
+                minutos = '0' + minutos;
+            }
+            if (segundos < 10) {
+                segundos = '0' + segundos;
+            }
+            document.getElementById('hora').innerHTML = horas + ':' + minutos + ':' + segundos;
+        }
+        setInterval(hora, 1000);
+    </script>
+</body>
+</html>

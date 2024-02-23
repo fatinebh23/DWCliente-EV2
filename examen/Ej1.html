@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej1-Examen</title>
+</head>
+<body>
+    <!-- 1.Genera en javascript una página web que te verifique una contraseña en un campo
+de texto. Si la contraseña es correcta debe cargar la página de google y sino debe
+mostrar acceso no concedido. -->
+
+<h4>Introduce la contraseña (1234) para poder acceder a la pagina web</h1>
+<input type="contraseña" id="paso">
+<button onclick="verificar()">Verificar</button>
+<script>
+    function verificar() {
+        if (document.getElementById('paso').value == '1234') {
+            window.location.href = 'https://www.google.com';
+        } else {
+            alert('Acceso no concedido');
+        }
+    }
+</script>
+</body>
+</html>

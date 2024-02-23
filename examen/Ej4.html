@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 4.Genera 3 botones,uno para ampliar un texto hasta hasta el doble , otro para
+disminuirlo hasta la mitad un texto y otro para volver al tamaño inicial. Si se supera
+el tamaño máximo debe mostrar por pantalla superado tamaño máximo y si llega al
+mínimo que muestre por pantalla tamaño mínimo (2p) -->
+
+    <p id="text">Texto de prueba</p>
+    <button onclick="aumentarTamaño()">Aumentar tamaño</button>
+    <button onclick="disiminuirTamaño()">Disminuir tamaño</button>
+    <button onclick="resetearTamaño()">Resetear</button>
+
+    <script>
+        function aumentarTamaño() {
+            var text = document.getElementById('text');
+            var fontSize = window.getComputedStyle(text, null).getPropertyValue('font-size');
+            var fontSize = parseFloat(fontSize);
+            if (fontSize < 40) {
+                text.style.fontSize = (fontSize + 5) + 'px';
+            } else {
+                alert('Superado tamaño máximo');
+            }
+        }
+        function disiminuirTamaño() {
+            var text = document.getElementById('text');
+            var fontSize = window.getComputedStyle(text, null).getPropertyValue('font-size');
+            var fontSize = parseFloat(fontSize);
+            if (fontSize > 10) {
+                text.style.fontSize = (fontSize - 5) + 'px';
+            } else {
+                alert('Tamaño mínimo');
+            }
+        }
+        function resetearTamaño() {
+            document.getElementById('text').style.fontSize = '16px';
+        }
+   </Script>
+
+    </body>
+</html>

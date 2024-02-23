@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 7. Realiza un formulario en el que el campo nombre no pueda estar vacio, el
+checkbox deba estar clicado, la fecha tiene que ser un número y teléfono tienen que
+ser un valor de 9 dígitos (todos estos campos te los mostrará con un alert cuando no
+se cumplan). Una vez pulsado enviar te debe pedir aceptación. Especifica la URL a la
+que se enviarán los datos del formulario cuando se envíe(procesar.php), se utilizará
+el método POST. -->
+
+<body>
+    <h1>Formulario</h1>
+
+    <form id="miFormulario" action="procesar.php" method="POST" onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <br>
+        <label for="telefonoInput">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}"/>
+        <br>
+        <label for="fecha">Fecha:</label>
+        <input type="text" id="fecha" name="fecha" required>
+        <br>
+        <label for="sexo">Sexo:</label>
+       
+        <input type="radio" id="masculino" name="sexo" value="masculino" required>
+        <label for="masculino">Masculino</label>
+    
+        <input type="radio" id="femenino" name="sexo" value="femenino" required>
+        <label for="femenino">Femenino</label>
+        
+        <br>
+        <label for="checkboxInput">Mayor de 18:</label>
+        <input type="checkbox" id="checkboxInput" name="enviar" required />
+        <br>
+        
+        <label for="fechaInput">Fecha:</label>
+        
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+
+</body>
+</html>

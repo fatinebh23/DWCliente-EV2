@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 3.Realiza una secuencias de 2 imágenes que cambie cada 5 segundos
+     -->
+   <!-- //Al primcipio salen dos imagenes y luego ya se cambian cada 5 segundos -->
+   no se como hacer que salga de primeras una imagen en vez de las dos al principio.
+   pero a los 5 segundos ya se cambian las imagenes.
+    <img src="/examen/imagenes/arbol.png" id="img1" >
+    <img src="/examen/imagenes/casa.png" id="img2"  >
+     <script>
+        var img1 = document.getElementById('img1');
+        var img2 = document.getElementById('img2');
+        var imagenes = [img1, img2];
+        var i = 0;
+        setInterval(function() {
+            imagenes[i].style.display = 'none';
+            i = (i + 1) % imagenes.length;
+            imagenes[i].style.display = 'block';
+        }, 5000);
+
+    </script>
+</body>
+</html>

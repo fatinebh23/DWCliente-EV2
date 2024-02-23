@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 8. Crea un texto en la página web y cuando pases el raton por el que desaparezca. -->
+    <h1 id="text">Pasa el raton por encima para que desaparezca</h1>
+    <script>
+        document.getElementById('text').addEventListener('mouseover', function() {
+            document.getElementById('text').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

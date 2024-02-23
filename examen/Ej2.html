@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej2-Examen</title>
+</head>
+<body>
+    <!-- 2.Cambiar el color de un texto de la página web y el fondo de toda la página. Utiliza
+un botón para cambiar color, otro para el color de fondo y otro para volver a las
+condiciones iniciales. -->
+    <p id="text">Texto de prueba</p>
+    <button onclick="cambiarcolor()">Cambiar color</button>
+    <button onclick="cambiarfondo()">Cambiar color de fondo</button>
+    <button onclick="resetear()">Resetear</button>
+    <script>
+        function cambiarcolor() {
+            document.getElementById('text').style.color = 'blue';
+        }
+        function cambiarfondo() {
+            document.body.style.backgroundColor = 'grey';
+        }
+        function resetear() {
+            document.getElementById('text').style.color = 'black';
+            document.body.style.backgroundColor = 'white';
+        }
+    </script>
+</body>
+</html>
