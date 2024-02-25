@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página con Lista de Animales</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        .sublista {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ANIMALES</h1>
+    <ul id="listaAnimales">
+        <li>.León</li>
+        <li>.Pantera</li>
+        <li>.Jirafa</li>
+    </ul>
+    <button onclick="añadirAnimal()">Añadir nuevo elemento</button><br>
+    <button onclick="reemplazarAnimal()">Reemplazar elemento</button><br>
+    <button onclick="borrarElemento()">Borrar elemento</button> <br>
+    <button onclick="clonarLista()">Clonar la lsita completa</button><br>
+    <button onclick="crearSublistaDOM()">Crear Sublista dentro de leon con funciones  (DOM)</button><br>
+    <button onclick="crearSublistaInnerHTML()">Crear Sublista dentro de leon con (InnerHTML)</button><br>
+
+    <script>
+        function añadirAnimal() {
+            var nuevoAnimal = prompt("Ingrese el nombre del nuevo animal:");
+            if (nuevoAnimal) {
+                var lista = document.getElementById("listaAnimales");
+                var nuevoElemento = document.createElement("li");
+                nuevoElemento.textContent = nuevoAnimal;
+                lista.appendChild(nuevoElemento);
+            }
+        }
+
+        function reemplazarAnimal() {
+            var animalAntiguo = prompt("Ingrese el nombre del animal a reemplazar:");
+            var animalNuevo = prompt("Ingrese el nuevo nombre del animal:");
+            if (animalAntiguo && animalNuevo) {
+                var lista = document.getElementById("listaAnimales");
+                var elementos = lista.getElementsByTagName("li");
+                for (var i = 0; i < elementos.length; i++) {
+                    if (elementos[i].textContent === animalAntiguo) {
+                        elementos[i].textContent = animalNuevo;
+                        break;
+                    }
+                }
+            }
+        }
+        function borrarElemento() {
+            var segundoParrafo = document.getElementById("contenedor").getElementsByTagName("p")[1];
+            if (segundoParrafo) {
+                segundoParrafo.remove();
+            }
+        }
+        function clonarLista() {
+            var contenedorClonado = document.getElementById("contenedor").cloneNode(true);
+            document.body.appendChild(contenedorClonado);
+        }
+
+        function crearSublistaDOM() {
+            var leon = document.getElementById("listaAnimales").firstElementChild;
+            var nuevaSublista = document.createElement("ul");
+            nuevaSublista.classList.add("sublista");
+            var nuevoElemento = document.createElement("li");
+            nuevoElemento.textContent = "Subanimal";
+            nuevaSublista.appendChild(nuevoElemento);
+            leon.appendChild(nuevaSublista);
+        }
+
+        function crearSublistaInnerHTML() {
+            var leon = document.getElementById("listaAnimales").firstElementChild;
+            leon.innerHTML += '<ul class="sublista"><li>Subanimal</li></ul>';
+        }
+    </script>
+</body>
+</html>

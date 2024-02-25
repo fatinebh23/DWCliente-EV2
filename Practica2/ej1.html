@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página con Botones</title>
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <p>Este es mi primer párrafo</p>
+    </div>
+    <button onclick="añadirParrafo()">Añadir párrafo</button>
+    <br>
+    <button onclick="insertarParrafo()">Insertar párrafo</button> <br>
+    <button onclick="reemplazarParrafo()">Reemplazar párrafo</button> <br>
+    <button onclick="borrarParrafo()">Borrar párrafo</button> <br>
+    <button onclick="clonarDiv()">Clonar div</button>
+
+    <script>
+        function añadirParrafo() {
+            var nuevoParrafo = document.createElement("p");
+            nuevoParrafo.textContent = "Párrafo añadido";
+            document.getElementById("contenedor").appendChild(nuevoParrafo);
+        }
+
+        function insertarParrafo() {
+            var nuevoParrafo = document.createElement("p");
+            nuevoParrafo.textContent = "Párrafo insertado";
+            var primerParrafo = document.getElementById("contenedor").firstChild;
+            document.getElementById("contenedor").insertBefore(nuevoParrafo, primerParrafo.nextSibling);
+        }
+
+        function reemplazarParrafo() {
+            var segundoParrafo = document.getElementById("contenedor").getElementsByTagName("p")[1];
+            if (segundoParrafo) {
+                segundoParrafo.textContent = "Párrafo reemplazado";
+            }
+        }
+
+        function borrarParrafo() {
+            var segundoParrafo = document.getElementById("contenedor").getElementsByTagName("p")[1];
+            if (segundoParrafo) {
+                segundoParrafo.remove();
+            }
+        }
+
+        function clonarDiv() {
+            var contenedorClonado = document.getElementById("contenedor").cloneNode(true);
+            document.body.appendChild(contenedorClonado);
+        }
+    </script>
+</body>
+</html>
